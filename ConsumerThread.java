@@ -11,11 +11,9 @@ import javax.sound.sampled.*;
 
 public class ConsumerThread extends Thread{
     MyLabel con;
-
-    public ConsumerThread(MyLabel con){
+    ConsumerThread(MyLabel con){
         this.con=con;
     }
-
     public void run(){
         while(true){
             try{
@@ -27,5 +25,4 @@ public class ConsumerThread extends Thread{
             }
         }
     }
-
 }
