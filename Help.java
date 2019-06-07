@@ -26,7 +26,7 @@ public class Help{
 	   this.user=user;
    }
    
-   public void run() {
+   public void play() {
       frame.setLocation(100,100);
       frame.setSize(800,500);
 

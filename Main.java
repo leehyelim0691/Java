@@ -17,11 +17,11 @@ class Main{
       //String[] fishArray = {"Salmon", "Flatfish", "Squid", "Octopus", "Minnow", "Shrimp", "Carp", "Tuna", "Mackerel", "Saury"};
       //Random random = new Random();
       LoadFile loadFile =new LoadFile();
-      loadFile.run();
+      loadFile.play();
       Sound sound = new Sound();
       sound.playSound(new File("music/UTSS.wav"), 1.0f, true);
       Intro intro = new Intro(sound);
-      intro.run();
+      intro.play();
 
    }
    public static void setUserName(String userName) {

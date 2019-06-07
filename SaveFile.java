@@ -17,9 +17,9 @@ public class SaveFile{
 	   this.user=user;
    }
    
-   public void run() {
+   public void play() {
 		  Print print=new Print("saveFile","Saved:)");
-		  print.run();
+		  print.play();
 		  
 	      fileName= "user.txt";
 	      outputStream= null;

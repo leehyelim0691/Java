@@ -14,7 +14,8 @@ public class Ask{
   JLabel label;
   JTextField text;
   User user;
-   Ask(User user){
+  
+   public Ask(User user){
      frame = new JFrame("askmenu");
      button = new JButton("ENTER");
      label = new JLabel();
@@ -22,7 +23,7 @@ public class Ask{
      this.user=user;
    }
 
-   public void run(){
+   public void play(){
 
       label.setText("<html>| Creator: How can I help you?<br/>| 1: Show me the fish list<br/>| 2: Show me the fishing nod list<br/>| 3: Show me the creators who made this prgoram<br/>| 4:Your current information</html>");
 
@@ -40,9 +41,9 @@ public class Ask{
       button.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
             Help help=new Help(text.getText(),user);
-            help.run();
+            help.play();
             frame.dispose();
          }
-      });//button ActionListener
+      });
    }
 }

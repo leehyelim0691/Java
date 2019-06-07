@@ -23,7 +23,7 @@ public class Intro{
     this.s=s;
   }
 
-  public void run(){
+  public void play(){
     enter.setBackground(new Color(103,153,255));
 	enter.setOpaque(true); enter.setBorderPainted(false);
     frame.setTitle("Enter your name");
@@ -39,7 +39,7 @@ public class Intro{
         Main.setUserName(userName);
         User user = new User(userName, 0, 1);
         ButtonMenu buttonMenu=new ButtonMenu(user, s);
-        buttonMenu.run();
+        buttonMenu.play();
         frame.dispose();
       }
     });

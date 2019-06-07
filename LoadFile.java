@@ -15,7 +15,7 @@ public class LoadFile{
       rodLevel=1;
     }
 
-    public void run(){
+    public void play(){
       try{
          Scanner sc = new Scanner(file);
          buffer = sc.nextLine();

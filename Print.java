@@ -20,7 +20,7 @@ public class Print{
     	message=this.message;
     }
     
-    public void run() {
+    public void play() {
       frame.setLayout(new BorderLayout());
       frame.setLocation(100,100);
       frame.setSize(800,500);

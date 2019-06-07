@@ -14,7 +14,7 @@ public class Ending{
         panel=new MyPanel();
     }
 
-    public void run(){
+    public void play(){
       frame.setTitle("Ending");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.add(panel,BorderLayout.CENTER);

@@ -16,8 +16,7 @@ public class Fishing{
     //JLabel letter;
     MyLabel bar;
     JButton button, button2;
-    Timer timer;
-    TimerTask task;
+   
     Sound s;
     User user;
 
@@ -26,7 +25,6 @@ public class Fishing{
       this.bar = bar;
       fishing.setTitle("bar");
       fishing.setLayout(new GridLayout(3,1));
-      //JLabel letter = new JLabel("        click");
       button = new JButton("Return to home");
       text = new JLabel("<html> Press "+key+" to wind your fishing rod</html>");
       this.s=s;
@@ -34,16 +32,16 @@ public class Fishing{
       this.rnd=rnd;
     }
 
-    public void run(){
+    public void play(){
       text.setFont(text.getFont().deriveFont(30.0f));
       text.setVerticalAlignment(SwingConstants.BOTTOM);
       text.setHorizontalAlignment(SwingConstants.CENTER);
       fishing.add(text);
 
-      timer = new Timer();
+      Timer timer = new Timer();
       Message= new JFrame();
 
-      task = new TimerTask(){
+      TimerTask task = new TimerTask(){
         public void run(){
                 s.stopBgm();
                 s.playSound(new File("music/fail.wav"), 1.0f, false);

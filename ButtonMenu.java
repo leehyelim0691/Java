@@ -10,10 +10,15 @@ import javax.sound.sampled.*;
 
 
 public class ButtonMenu{
-   JButton b1,b2,b3,b4,b5;
-   JFrame menu;
-   User user;
-   Sound s;
+	int rnd;
+    char key;
+    JButton b1,b2,b3,b4,b5;
+    JFrame menu;
+    User user;
+    Sound s;
+    Random ran;
+    MyLabel bar;
+   
 
     public ButtonMenu(User user, Sound s){
       b1 = new JButton("FISHING");
@@ -26,7 +31,7 @@ public class ButtonMenu{
       this.s=s;
     }
 
-    public void run(){
+    public void play(){
       menu.setLayout(new GridLayout(5,1));
 
       b1.setBackground(new Color(212,244,250));
@@ -53,12 +58,12 @@ public class ButtonMenu{
 
       b1.addActionListener(new ActionListener(){
           public void actionPerformed(ActionEvent e){
-              Random ran = new Random();
-              int rnd = ran.nextInt(94)+33;
-              char key = (char)(rnd);
-              MyLabel bar = new MyLabel(20);
+              ran = new Random();
+              rnd = ran.nextInt(94)+33;
+              key = (char)(rnd);
+              bar = new MyLabel(20);
               Fishing fishingThread = new Fishing(user,bar,key,rnd,s);
-              fishingThread.run();
+              fishingThread.play();
               bar.setFrame(fishingThread.fishing);
           }
       });
@@ -66,21 +71,21 @@ public class ButtonMenu{
       b2.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
             Shopping shopping = new Shopping(user, menu);
-            shopping.run();
+            shopping.play();
          }
       });
 
       b3.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
             SaveFile saveFile = new SaveFile(user);
-            saveFile.run();
+            saveFile.play();
          }
       });
 
       b4.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
             Ask ask = new Ask(user);
-            ask.run();
+            ask.play();
          }
       });
 
