@@ -13,20 +13,19 @@ public class Fishing{
     int rnd;
     JFrame fishing, Message;
     JLabel text,letter2;
-    //JLabel letter;
     MyLabel bar;
     JButton button, button2;
-   
     Sound s;
     User user;
 
     public Fishing (User user, MyLabel bar, char key, int rnd, Sound s){
       fishing = new JFrame();
-      this.bar = bar;
+      Message= new JFrame();
       fishing.setTitle("bar");
       fishing.setLayout(new GridLayout(3,1));
       button = new JButton("Return to home");
       text = new JLabel("<html> Press "+key+" to wind your fishing rod</html>");
+      this.bar = bar;
       this.s=s;
       this.user=user;
       this.rnd=rnd;
@@ -39,7 +38,6 @@ public class Fishing{
       fishing.add(text);
 
       Timer timer = new Timer();
-      Message= new JFrame();
 
       TimerTask task = new TimerTask(){
         public void run(){
