@@ -12,7 +12,7 @@ public class Shopping{
     JLabel userName, userMoney, userRodLevel, shopName;
     JButton beginner, intermediate, advanced, tuition;
     JLabel beginnerPrice, intermediatePrice, advancedPrice, tuitionPrice;
-    JFrame shop;
+    JFrame shop,menu;
     User user;
 
     public Shopping(User user, JFrame menu){
@@ -31,6 +31,7 @@ public class Shopping{
          tuitionPrice = new JLabel("                 3000000");
 
          shop = new JFrame("SHOP");
+         this.menu=menu;
          this.user=user;
       }
 
@@ -40,9 +41,6 @@ public class Shopping{
         shop.setLayout(new GridLayout(1,4));
 
         userMoney.setBackground(new Color(92,209,229));
-
-
-
 
         shopName.setForeground(new Color(250,0,0));
         shopName.setOpaque(true); beginner.setBorderPainted(false);

@@ -10,6 +10,7 @@ import javax.sound.sampled.*;
 
 public class Fishing{
     char key;
+    int rnd;
     JFrame fishing, Message;
     JLabel text,letter2;
     //JLabel letter;
@@ -18,6 +19,7 @@ public class Fishing{
     Timer timer;
     TimerTask task;
     Sound s;
+    User user;
 
     public Fishing (User user, MyLabel bar, char key, int rnd, Sound s){
       fishing = new JFrame();
@@ -28,6 +30,8 @@ public class Fishing{
       button = new JButton("Return to home");
       text = new JLabel("<html> Press "+key+" to wind your fishing rod</html>");
       this.s=s;
+      this.user=user;
+      this.rnd=rnd;
     }
 
     public void run(){

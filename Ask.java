@@ -13,11 +13,13 @@ public class Ask{
   JButton button;
   JLabel label;
   JTextField text;
+  User user;
    Ask(User user){
      frame = new JFrame("askmenu");
      button = new JButton("ENTER");
      label = new JLabel();
      text = new JTextField();
+     this.user=user;
    }
 
    public void run(){
@@ -37,7 +39,8 @@ public class Ask{
 
       button.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
-            new Help(text.getText(),user);
+            Help help=new Help(text.getText(),user);
+            help.run();
             frame.dispose();
          }
       });//button ActionListener

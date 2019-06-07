@@ -25,7 +25,7 @@ public class Intro{
 
   public void run(){
     enter.setBackground(new Color(103,153,255));
-	  enter.setOpaque(true); enter.setBorderPainted(false);
+	enter.setOpaque(true); enter.setBorderPainted(false);
     frame.setTitle("Enter your name");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
