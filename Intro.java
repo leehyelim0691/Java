@@ -39,7 +39,7 @@ public class Intro{
         Main.setUserName(userName);
         User user = new User(userName, 0, 1);
         ButtonMenu buttonMenu=new ButtonMenu(user, s);
-        //buttonMenu.run();
+        buttonMenu.run();
         frame.dispose();
       }
     });

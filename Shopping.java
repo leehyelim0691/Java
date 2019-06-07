@@ -13,6 +13,7 @@ public class Shopping{
     JButton beginner, intermediate, advanced, tuition;
     JLabel beginnerPrice, intermediatePrice, advancedPrice, tuitionPrice;
     JFrame shop;
+    User user;
 
     public Shopping(User user, JFrame menu){
         userName = new JLabel("User Name: " + user.getName());
@@ -30,6 +31,7 @@ public class Shopping{
          tuitionPrice = new JLabel("                 3000000");
 
          shop = new JFrame("SHOP");
+         this.user=user;
       }
 
       public void run(){
