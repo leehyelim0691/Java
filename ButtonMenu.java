@@ -1,12 +1,7 @@
-import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-import javax.imageio.ImageIO;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 
 public class ButtonMenu{
@@ -62,7 +57,7 @@ public class ButtonMenu{
               rnd = ran.nextInt(94)+33;
               key = (char)(rnd);
               bar = new MyLabel(20);
-              Fishing fishingThread = new Fishing(user,bar,key,rnd,s);
+              Fishing fishingThread = new Fishing(user,bar,key,s);
               fishingThread.play();
               bar.setFrame(fishingThread.fishing);
           }

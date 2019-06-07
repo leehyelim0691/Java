@@ -1,12 +1,5 @@
-import java.io.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 public class Print{
 	JFrame frame;
@@ -16,8 +9,8 @@ public class Print{
     public Print(String frameName, String message){
     	frame = new JFrame(frameName);
     	label = new JLabel();
-    	frameName=this.frameName;
-    	message=this.message;
+    	this.frameName=frameName;
+    	this.message=message;
     }
     
     public void play() {

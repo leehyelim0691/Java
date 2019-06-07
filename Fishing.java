@@ -2,15 +2,11 @@ import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 public class Fishing{
     char key;
-    int rnd;
     String[] fishArray = {"Salmon", "Flatfish", "Squid", "Octopus", "Minnow", "Shrimp", "Carp", "Tuna", "Mackerel", "Saury"};
     JFrame fishing, Message;
     JLabel text,letter;
@@ -19,7 +15,7 @@ public class Fishing{
     Sound s;
     User user;
 
-    public Fishing (User user, MyLabel bar, char key, int rnd, Sound s){
+    public Fishing (User user, MyLabel bar, char key, Sound s){
       fishing = new JFrame();
       Message= new JFrame();
       fishing.setTitle("bar");
@@ -29,7 +25,7 @@ public class Fishing{
       this.bar = bar;
       this.s=s;
       this.user=user;
-      this.rnd=rnd;
+      this.key=key;
     }
 
     public void play(){
@@ -68,7 +64,7 @@ public class Fishing{
             }
           };
 
-        timer.schedule(task, 10000);
+        timer.schedule(task, 7000);
 
         bar.setBackground(new Color(212,244,250));
         bar.setOpaque(true);
@@ -93,7 +89,7 @@ public class Fishing{
             @Override
             public void keyPressed(KeyEvent ke) {
                 if(ke.getKeyChar() == key)
-                    bar.fill(user, rnd, timer);
+                    bar.fill(user, timer);
             }
             @Override
             public void keyReleased(KeyEvent ke) {
@@ -108,92 +104,4 @@ public class Fishing{
         th.start();
     }
 }
-
-
-/*class Fishing{
-    JFrame fishing = new JFrame();
-    MyLabel bar;
-    JLabel letter = new JLabel("        click");
-    JButton button = new JButton("Return to home");
-    char key;
-
-    Fishing (User user, String [] fishArray, MyLabel bar, char key, int rnd, Sound s){
-
-        this.bar = bar;
-        fishing.setTitle("bar");
-        //this.setDefaultCloseOperation(TabAndThreadEx.EXIT_ON_CLOSE);
-        fishing.setLayout(new GridLayout(3,1));
-
-        JLabel text = new JLabel("<html> Press "+key+" to wind your fishing rod</html>");
-        text.setFont(text.getFont().deriveFont(30.0f));
-        text.setVerticalAlignment(SwingConstants.BOTTOM);
-        text.setHorizontalAlignment(SwingConstants.CENTER);
-        fishing.add(text);
-        Timer timer = new Timer();
-        JFrame Message= new JFrame();
-        TimerTask task = new TimerTask(){
-            public void run(){
-                s.stopBgm();
-                s.playSound(new File("fail.wav"), 1.0f, false);
-                //fail message
-                fishing.dispose();
-                Message.pack();
-                Message.setLocation(100,100);
-                Message.setSize(800,500);
-                //Message.setLayout();
-                JLabel letter2 = new JLabel("fail:(");
-                letter2.setFont(letter2.getFont().deriveFont(25.0f));
-                letter2.setVerticalAlignment(SwingConstants.CENTER);
-                letter2.setHorizontalAlignment(SwingConstants.CENTER);
-                JButton button = new JButton("Return to home");
-                Message.add(letter2,BorderLayout.CENTER);
-                Message.add(button,BorderLayout.SOUTH);
-                Message.setVisible(true);
-                button.addActionListener(new ActionListener(){
-                public void actionPerformed(ActionEvent e){
-                    Message.dispose();
-                }
-              });
-            }
-        };
-
-        timer.schedule(task, 10000);
-
-
-        bar.setBackground(new Color(212,244,250));
-        bar.setOpaque(true);
-        bar.setLocation(20, 50);
-        bar.setSize(300,20);
-        fishing.add(bar);
-        fishing.add(button);
-        button.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                fishing.dispose();
-            }
-        });
-
-        //fishing.pack();
-        fishing.setVisible(true);
-        fishing.addKeyListener(new KeyListener(){
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-            @Override
-            public void keyPressed(KeyEvent ke) {
-                if(ke.getKeyChar() == key)
-                    bar.fill(user, fishArray, rnd, timer);
-            }
-            @Override
-            public void keyReleased(KeyEvent ke) {
-            }
-        });
-        //fishing.setLocationRelativeTo(null);
-        fishing.setLocation(100,100);
-        fishing.setSize(800,500);
-        fishing.setVisible(true);
-        fishing.requestFocus();
-        ConsumerThread th = new ConsumerThread(bar);
-        th.start();
-    }
-}*/
 

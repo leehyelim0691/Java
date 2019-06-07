@@ -1,12 +1,8 @@
-import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 public class Shopping{
     JLabel userName, userMoney, userRodLevel, shopName,beginnerPrice, intermediatePrice, advancedPrice, tuitionPrice;
@@ -136,10 +132,10 @@ public class Shopping{
         });
         tuition.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                if(user.getMoney()>30000){
+                if(user.getMoney()>3000000){
                     menu.dispose();
                     shop.dispose();
-                    user.setMoney(-30000);
+                    user.setMoney(-3000000);
 
                     Timer timer = new Timer();
                     TimerTask task = new TimerTask(){

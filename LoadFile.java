@@ -12,7 +12,7 @@ public class LoadFile{
       file = new File(fileName);
       buffer = null;
       money=0;
-      rodLevel=1;
+      rodLevel=0;
     }
 
     public void play(){

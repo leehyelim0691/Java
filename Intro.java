@@ -1,12 +1,8 @@
-import java.io.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
+
 
 public class Intro{
   JFrame frame;
@@ -37,7 +33,7 @@ public class Intro{
       public void actionPerformed(ActionEvent e){
         String userName = name.getText();
         Main.setUserName(userName);
-        User user = new User(userName, 0, 1);
+        User user = new User(userName, 0, 0);
         ButtonMenu buttonMenu=new ButtonMenu(user, s);
         buttonMenu.play();
         frame.dispose();

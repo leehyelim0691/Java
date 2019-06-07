@@ -1,12 +1,5 @@
 import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
+
 
 class Main{
    public static int money;
@@ -14,8 +7,6 @@ class Main{
    private static String userName;
 
    public static void main(String[] args){
-      //String[] fishArray = {"Salmon", "Flatfish", "Squid", "Octopus", "Minnow", "Shrimp", "Carp", "Tuna", "Mackerel", "Saury"};
-      //Random random = new Random();
       LoadFile loadFile =new LoadFile();
       loadFile.play();
       Sound sound = new Sound();

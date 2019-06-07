@@ -1,12 +1,3 @@
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 public class User{
 

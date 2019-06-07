@@ -1,28 +1,22 @@
-import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-import javax.imageio.ImageIO;
 import java.util.Timer;
-import java.util.TimerTask;
-import javax.sound.sampled.*;
 
 public class MyLabel extends JLabel{
-    int fishPrice,barSize,maxBarSize,width;
+    int fishPrice,barSize=0,maxBarSize,width,rnd1,rnd2;
     double fishWeight;
+    Random random = new Random();
     String fishName,fishImage;
     String[] fishArray = {"Salmon", "Flatfish", "Squid", "Octopus", "Minnow", "Shrimp", "Carp", "Tuna", "Mackerel", "Saury"};
-    JFrame fishingFrame;
+    JFrame fishingFrame,Message=new JFrame();
     JButton button;
     MyPanel panel;
-    JFrame Message;
 
     public MyLabel(int maxBarSize){
-      barSize=0;
       this.maxBarSize=maxBarSize;
-      Message = new JFrame();
-    }
+      }
 
     public void setFrame(JFrame frame){
         this.fishingFrame = frame;
@@ -37,17 +31,25 @@ public class MyLabel extends JLabel{
         g.fillRect(0,0,width,this.getHeight());
     }
 
-    synchronized void fill(User user, int rnd, Timer timer){
-      fishWeight = rnd % 10;
-      fishPrice = (int)fishWeight * 10;
-      fishName = fishArray[rnd%10];
+   
+    
+    
+    
+    
+    
+    synchronized void fill(User user, Timer timer){
+    	  rnd1 = random.nextInt(10);
+          rnd2 = random.nextInt(10)+1;
+      fishWeight = (rnd2+1)*(user.getRodLevel()*user.getRodLevel()+1);
+      fishPrice = (int)fishWeight * 10000;
+      fishName = fishArray[rnd1%10];
       fishImage = "picture/" + fishName + ".jpg";
 
       if(barSize==maxBarSize){
           fishingFrame.dispose();
           try{
                 timer.cancel();
-                user.setMoney (rnd*10000);
+                user.setMoney (fishPrice);
                 Message.pack();
 
                 button = new JButton("Return to home");
@@ -112,7 +114,7 @@ public class MyLabel extends JLabel{
          g.setFont(new Font("myFont",Font.BOLD ,40));
          g.setColor(new Color(95,0,255));
          g.drawString("       Success~!", 250, 40);
-         g.setFont(new Font("secondFont",Font.PLAIN,25));
+         g.setFont(new Font("secondFont",Font.PLAIN,20));
          g.setColor(Color.BLACK);
          g.drawString( "The fish you just caught: "+fishName+"  Weight: "+fishWeight+" kg  Price: "+fishPrice+" Won",10,430);
       }

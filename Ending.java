@@ -1,9 +1,6 @@
-import java.io.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.imageio.ImageIO;
+
 
 public class Ending{
   JFrame frame;
